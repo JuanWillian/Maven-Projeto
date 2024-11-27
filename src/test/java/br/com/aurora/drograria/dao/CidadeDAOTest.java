@@ -17,7 +17,7 @@ public class CidadeDAOTest {
 		EstadoDao estadoDao = new EstadoDao(null);
 		Estado estado = estadoDao.buscar(2L);
 		Cidade cidade = new Cidade();
-		cidade.setNome("");
+		cidade.setNome("Volta Redonda");
 		cidade.setEstado(estado);
 		CidadeDao cidadeDao = new CidadeDao(null);
 		cidadeDao.salvar(cidade);
@@ -37,7 +37,7 @@ public class CidadeDAOTest {
 	@Test
 	@Ignore
 	public void excluir() {
-		long codigo = 11L;
+		long codigo = 2L;
 		CidadeDao cidadeDao = new CidadeDao(null);
 		Cidade cidade = cidadeDao.buscar(codigo);
 		if (cidade == null) {
@@ -55,7 +55,7 @@ public class CidadeDAOTest {
 	@Test
 	@Ignore
 	public void editar() {
-		long codigo = 8L;
+		long codigo = 3L;
 		CidadeDao cidadeDao = new CidadeDao(null);
 		Cidade cidade = cidadeDao.buscar(codigo);
 		if (cidade == null) {
@@ -63,11 +63,9 @@ public class CidadeDAOTest {
 		} else {
 			System.out.println("Antes da remoção:");
 			listar();
-			cidade.setEstado(null);
-			cidade.setNome(null);
-			System.out.println("Apos a remoção: ");
+			cidade.setCodigo(2L);
+			System.out.println("Após a remoção:");
 			listar();
-			 
 		}
 	}
 }
